@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: index.html
+    destination: /var/www/html/
+hooks:
+  ApplicationStop:
+    - location: Scripts/StopServer.sh
+  BeforeInstall:
+    - location: Scripts/CheckHtmlContents.sh
+  AfterInstall:
+    - location: Scripts/CheckHtmlContents.sh
+  ApplicationStart:
+    - location: Scripts/StartServer.sh
+      timeout: 180
