@@ -14,3 +14,6 @@ hooks:
   ApplicationStart:
     - location: Scripts/StartServer.sh
       timeout: 180
+  ValidateService:
+    - location: Scripts/CheckServerHealth.sh
+      timeout: 180
